@@ -20,7 +20,7 @@ namespace documentmanagement
 
         private HttpRequest _req;
         private NameValueCollection nvc = new NameValueCollection();
-        [Function("search")]
+        [Function("delete")]
         public async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = null)]
             HttpRequest req)
         {
