@@ -41,7 +41,7 @@ namespace documentmanagement
                 response.Add(JsonConvert.DeserializeObject<Dictionary<string,string>>(results));
                 nvc.Remove("FileName");
                 nvc.Remove("FileContentType");
-                nvc.Remove("FileLegth");
+                nvc.Remove("FileLength");
             }
 
             return resultSet(JsonConvert.SerializeObject(response));
