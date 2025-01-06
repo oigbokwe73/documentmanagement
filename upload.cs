@@ -28,16 +28,17 @@ namespace documentmanagement
 
             _logger.LogInformation("C# HTTP trigger function processed a request.");
             _req.Headers.ToList().ForEach(item => { nvc.Add(item.Key, item.Value.FirstOrDefault()); });
-            var response = new List<string>();
+            var response = new List<Dictionary<string,string>>();
             var formdata = await req.ReadFormAsync();
             var file = req.Form.Files;
             foreach (var item in file)
             {
                 nvc.Add("FileName", item.FileName);
                 nvc.Add("FileContentType", item.ContentType);
-                nvc.Add("FileLegth", item.Length.ToString());
+                nvc.Add("FileLength", item.Length.ToString());
                 var results = orchrestatorService.Run(item.OpenReadStream());
-                response.Add(results);
+                JsonConvert.DeserializeObject<Dictionary<string,string>>(results);
+                response.Add(JsonConvert.DeserializeObject<Dictionary<string,string>>(results));
                 nvc.Remove("FileName");
                 nvc.Remove("FileContentType");
                 nvc.Remove("FileLegth");
