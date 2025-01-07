@@ -37,8 +37,9 @@ namespace documentmanagement
                 nvc.Add("FileContentType", item.ContentType);
                 nvc.Add("FileLength", item.Length.ToString());
                 var results = orchrestatorService.Run(item.OpenReadStream());
-                JsonConvert.DeserializeObject<Dictionary<string,string>>(results);
-                response.Add(JsonConvert.DeserializeObject<Dictionary<string,string>>(results));
+                var fileDetails = JsonConvert.DeserializeObject<Dictionary<string,string>>(results);
+                fileDetails.Add("FileName",item.FileName);
+                response.Add(fileDetails);
                 nvc.Remove("FileName");
                 nvc.Remove("FileContentType");
                 nvc.Remove("FileLength");
