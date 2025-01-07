@@ -16,6 +16,26 @@ The solution is built using **Azure Functions**, **Azure Blob Storage**, **Azure
 
 ---
 
+graph TD
+    A[User Uploads Document] -->|HTTP Trigger| B[Azure Function]
+    B -->|Generate Document ID| C[Azure Blob Storage]
+    C -->|Store Document| D[Blob Container]
+    B -->|Store Metadata| E[Azure Table Storage]
+    E -->|Document Metadata Stored| F[Table Storage Record]
+
+    G[User Searches Document] -->|HTTP Trigger| H[Azure Function]
+    H -->|Query Metadata| E
+    E -->|Return Metadata| I[Azure Function]
+    I -->|Fetch Document URL| C
+    C -->|Return URL| J[User Downloads Document]
+
+    K[Periodic Archival Task] -->|Timer Trigger| L[Azure Function]
+    L -->|Query Expired Metadata| E
+    E -->|Identify Old Documents| M[Azure Blob Storage]
+    M -->|Move to Archive Container| N[Archive Blob Container]
+    L -->|Update Metadata| E
+
+---
 ### **Architecture**
 
 1. **Azure Functions**: Handles events such as document uploads, metadata updates, and retrieval requests.
