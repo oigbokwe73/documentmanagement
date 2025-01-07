@@ -32,11 +32,6 @@ graph TD
     I -->|Fetch Document URL| C
     C -->|Return URL| J[User Downloads Document]
 
-    K[Periodic Archival Task] -->|Timer Trigger| L[Azure Function]
-    L -->|Query Expired Metadata| E
-    E -->|Identify Old Documents| M[Azure Blob Storage]
-    M -->|Move to Archive Container| N[Archive Blob Container]
-    L -->|Update Metadata| E
 ```
 
 ### **Description**
