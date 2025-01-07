@@ -16,6 +16,9 @@ The solution is built using **Azure Functions**, **Azure Blob Storage**, **Azure
 
 ---
 
+Here is a **Mermaid diagram** for the document management system workflow:
+
+```mermaid
 graph TD
     A[User Uploads Document] -->|HTTP Trigger| B[Azure Function]
     B -->|Generate Document ID| C[Azure Blob Storage]
@@ -34,6 +37,17 @@ graph TD
     E -->|Identify Old Documents| M[Azure Blob Storage]
     M -->|Move to Archive Container| N[Archive Blob Container]
     L -->|Update Metadata| E
+```
+
+### **Description**
+- **Document Upload**:
+  - User uploads a document, triggering an Azure Function to store the document in Blob Storage and its metadata in Table Storage.
+- **Document Search**:
+  - User searches via a query. Azure Function retrieves metadata from Table Storage, fetches the document URL from Blob Storage, and returns it to the user.
+- **Periodic Archival**:
+  - A Timer Trigger in Azure Function periodically moves old documents to an archive container and updates metadata accordingly.
+
+Let me know if you'd like further customization or a different diagram style!
 
 ---
 ### **Architecture**
