@@ -50,8 +50,7 @@ Let me know if you'd like further customization or a different diagram style!
 1. **Azure Functions**: Handles events such as document uploads, metadata updates, and retrieval requests.
 2. **Azure Blob Storage**: Stores the actual document files in blob containers, ensuring scalability and low cost.
 3. **Azure Table Storage**: Maintains metadata records (e.g., document name, upload date, version, tags, owner) for fast querying and search.
-4. **Azure Queue Storage** (Optional): Handles asynchronous tasks, such as triggering notifications for approvals or archival workflows.
-
+   
 ---
 
 ### **Workflow**
@@ -62,8 +61,7 @@ Let me know if you'd like further customization or a different diagram style!
   1. The application sends the file to an **Azure Function** using an HTTP trigger.
   2. Azure Function generates a unique **Document ID** and uploads the document to **Azure Blob Storage** in a designated container (e.g., `legal-documents`).
   3. Metadata about the document (e.g., file name, document type, upload timestamp, owner, tags) is stored in **Azure Table Storage** for indexing.
-  4. (Optional) Azure Function sends a message to **Azure Queue Storage** to notify approvers or other stakeholders.
-
+  
 ---
 
 #### **2. Document Retrieval Process**
