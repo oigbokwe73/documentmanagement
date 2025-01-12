@@ -178,4 +178,59 @@ Let me know if you'd like further customization or a different diagram style!
 |training[YYYYMMDD]|N0 SQL DataStore|
 
 
+> Kusto Queries used for Application Insights
+
+```
+search "ReceiveMessageFromServieBus"
+| summarize count() by bin(timestamp, 1h)
+| order by timestamp desc    
+
+```
+```
+customEvents
+| where isnotnull(customDimensions.ProcessName)
+//| where customDimensions.ProcessName == 'ReceiveMessageFromServieBus'  
+| summarize count() by bin(timestamp, 1m),  Key = tostring(customDimensions.ProcessName) 
+| order by timestamp desc
+| render columnchart
+``` 
+  
+  
+## Products
+
+|products|links|Comments|
+|:----|:----|:----|
+|Azure Getting Started |https://azure.microsoft.com/en-us/free/| Create free account + $200 in Credit|
+|Sample Data Sets|https://www.kaggle.com/datasets| Useful site for pulling sample payload|
+|Azure Storage Explorer|https://azure.microsoft.com/en-us/features/storage-explorer/#features|useful view and query data in azure table storage|
+|Postman|https://www.postman.com/downloads/|Postman supports the Web or Desktop Version|
+|VsCode| https://visualstudio.microsoft.com/downloads/ |  Required extensions. Azure Functions, Azure Account
+|VS Studio Community Edition |https://visualstudio.microsoft.com/downloads/| Recommended. Nice intergration with Azure. software is free.
+|Liquid Template|https://liquidjs.com/tutorials/intro-to-liquid.html|
+
+  ## Configuration-driven development
+ 
+ "Configuration-driven development," refers to an approach in software development where the behavior and functionality of an application are primarily controlled through configuration files, rather than writing code. It focuses on separating application logic from configuration parameters, allowing developers to easily modify the behavior of the software without the need for extensive code changes.  [Xenhey.BPM.Core.Net6](https://www.nuget.org/packages/Xenhey.BPM.Core.Net8) offers a orchrestration pipeline using configuration to drive the execution of business logic, providing a tailored solution for each Line Of Business(LOB). The following are some benefits. 
+
+ 1. Flexibility: By using configuration files, developers can easily tweak and adjust the application's behavior without modifying the underlying code. It allows for quick customization and adaptation to different scenarios or client requirements.
+
+2. Maintenance: Separating configuration from code simplifies maintenance processes. Updates and modifications can be made by adjusting the configuration files, reducing the risk of introducing bugs or breaking existing functionality. It also facilitates version control and collaboration, as changes to configuration can be tracked separately from code changes.
+
+3. Scalability: Configuration-driven development promotes scalability by enabling the application to handle different environments, configurations, or user preferences. It allows for seamless deployment across multiple instances or environments with minimal code changes.
+
+4. Testing and Validation: Configuration-driven development enhances testing and validation processes. Since configuration changes are isolated from the codebase, it becomes easier to verify the impact of different configurations on the application's behavior. It also facilitates A/B testing or experimentation by quickly switching between different configurations.
+
+5. Domain-Specific Customization: Configuration-driven development enables domain-specific customization by providing options and settings tailored to specific use cases. This empowers non-technical users or administrators to configure the application according to their specific requirements without the need for coding expertise
+
+
+
+  ## Contact
+  
+For questions related to this project, can be reached via email :- support@xenhey.com
+
+
+﻿
+
+
+
 
