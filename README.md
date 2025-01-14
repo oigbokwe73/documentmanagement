@@ -128,16 +128,27 @@ Let me know if you'd like further customization or a different diagram style!
 
 ## Appplication Setting 
 
+> **Note:**  Remote configuration
+
 |Key|Value | Comment|
 |:----|:----|:----|
-|AzureWebJobsStorage|[CONNECTION STRING]|RECOMMENDATION :  store in AzureKey Vault.|
-|ConfigurationPath| [CONFIGURATION FOLDER PATH] |Folder is optional
+|AzureWebJobsStorage|[CONNECTION STRING]|RECOMMENDATION :  store in Azure Key Vault.|
+|ApiStore|Store and manage WorkFlow configuration files remotely  |
 |ApiKeyName|[API KEY NAME]|Will be passed in the header  :  the file name of the config.
 |AppName| [APPLICATION NAME]| This is the name of the Function App, used in log analytics|
 |StorageAcctName|[STORAGE ACCOUNT NAME]|Example  "AzureWebJobsStorage"|
-|ServiceBusConnectionString|[SERVICE BUS CONNECTION STRING]|Example  "ServiceBusConnectionString".  Recommmended to store in Key vault.|
-|DatabaseConnection|[DATABASE CONNECTION STRING]|Example  "DatabaseConnection". Recommmended to store in Key vault.|
-|TimerInterval|[TIMER_INTERVAL]|Example  "0 */1 * * * *" 1 MIN|
+|EncryptionKey|Generate Encryption Key | Generate a encryption key. Store in Azure Key Vault |
+
+> **Note:**  Managed configuration
+
+|Key|Value | Comment|
+|:----|:----|:----|
+|AzureWebJobsStorage|[CONNECTION STRING]|RECOMMENDATION :  store in Azure Key Vault.|
+|ConfigurationPath|Store and manage WorkFlow configuration files remotely  |
+|ApiKeyName|[API KEY NAME]|Will be passed in the header  :  the file name of the config.
+|AppName| [APPLICATION NAME]| This is the name of the Function App, used in log analytics|
+|StorageAcctName|[STORAGE ACCOUNT NAME]|Example  "AzureWebJobsStorage"|
+|EncryptionKey|Generate Encryption Key | Generate a encryption key. Store in Azure Key Vault |
 
 
 > **Note:**  Look at the configuration file in the **Config** Folder and created a Table to record information.
