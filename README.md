@@ -148,11 +148,11 @@ Let me know if you'd like further customization or a different diagram style!
 
 |FileName|Description|
 |:----|:----|
-|99F77BEF300E4660A63A939ADD0BCF68.json| **Upload File** Parse CSV file --> Write Batched Files To Storage|
-|43EFE991E8614CFB9EDECF1B0FDED37A.json| **File Parser** Parse CSV file --> File received from SFTP will use this process to parse files|
-|43EFE991E8614CFB9EDECF1B0FDED37D.json| **Upload File** Parse JSON/CSV Directly to NO SQL DB|
-|43EFE991E8614CFB9EDECF1B0FDED37C.json| **Service Bus Trigger for SQL DB** | Receive JSON payload and insert into SQL DB|
-|43EFE991E8614CFB9EDECF1B0FDED37F.json| **Service Bus Trigger for No SQL DB** | Receive JSON payload and insert into NO SQL DB|
+|34776F9C03DF46F182084A8B8D2CA9F7.json| **Upload multiple Documents** Write Batched Files To Storage|
+|6C58979A27E047DC824BB2DECF9E0BBB.json| **Login** Basic authentication. Optional features(Open ID Connect, and Azure Entra(Formally Active Directory)|
+|1E8FA4B3B21044C38DD518A4CFD96C53.json| **Serch all documents for registered users** |
+|71F5CECC7D8E4B8890A4380EB01CC173.json| **Registration user** | Basic username and password|
+|E655855A45FC4178B4A8E046A147CD94.json| **Retrieve a Document** | Receive JSON payload and insert into NO SQL DB|
 |43EFE991E8614CFB9EDECF1B0FDED37E.json| **Blob Trigger** Send parsed/sharded file  to Send to Service Bus|
 |43EFE991E8614CFB9EDECF1B0FDED37B.json| **Search Resullt from NO SQLDB** |
 |43EFE991E8614CFB9EDECF1B0FDED37G.json| **Search SQL DB. Return resultset** |
