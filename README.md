@@ -185,7 +185,7 @@ search "ReceiveMessageFromServieBus"
 ```
 customEvents
 | where isnotnull(customDimensions.ProcessName)
-//| where customDimensions.ProcessName == 'ReceiveMessageFromServieBus'  
+| where customDimensions.ProcessName == ''  
 | summarize count() by bin(timestamp, 1m),  Key = tostring(customDimensions.ProcessName) 
 | order by timestamp desc
 | render columnchart
