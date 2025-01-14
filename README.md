@@ -153,27 +153,14 @@ Let me know if you'd like further customization or a different diagram style!
 |1E8FA4B3B21044C38DD518A4CFD96C53.json| **Serch all documents for registered users** |
 |71F5CECC7D8E4B8890A4380EB01CC173.json| **Registration user** | Basic username and password|
 |E655855A45FC4178B4A8E046A147CD94.json| **Retrieve a Document** | Receive JSON payload and insert into NO SQL DB|
-|43EFE991E8614CFB9EDECF1B0FDED37E.json| **Blob Trigger** Send parsed/sharded file  to Send to Service Bus|
-|43EFE991E8614CFB9EDECF1B0FDED37B.json| **Search Resullt from NO SQLDB** |
-|43EFE991E8614CFB9EDECF1B0FDED37G.json| **Search SQL DB. Return resultset** |
-|3FB620B0E0FD4E8F93C9E4D839D00E1E.json| **Copy File from SFTP into the pickup folder** |
-|3FB620B0E0FD4E8F93C9E4D839D00E1F.json| **Create a new Record in NoSQL Database** |
-|CC244934898F46789734A9437B6F76CA.json| Encode Payload Request |
-|6B427917E36A4DA281D57F9A64AD9D55.json| Get reports from DB  |
 
 
 > Create the following blob containers and share in azure storage
 
 |ContainerName|Description|
 |:----|:----|
-|config|Location for the configuration files|
-|pickup|Thes are files that are copied from the SFTP share and dropped in the pickup container |
-|processed|These are files the have been parsed and dropped in th processed container|
-
-|Table|Description|
-|:----|:----|
-|csvbatchfiles|Track the CSV parsed files|
-|training[YYYYMMDD]|N0 SQL DataStore|
+|config|**Location for the configuration files** Used for a managed solution|
+|documentstore|Store all documents|
 
 
 > Kusto Queries used for Application Insights
