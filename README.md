@@ -170,6 +170,15 @@ graph TD
 |documentstore|Store all documents|
 
 
+> Create the following tables
+
+|ContainerName|Description|
+|:----|:----|
+|registration|** User Credentials ** |
+|documentstore|Store all documents|
+
+
+
 > Kusto Queries used for Application Insights
 
 ```
