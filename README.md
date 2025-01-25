@@ -144,7 +144,7 @@ graph TD
 |ApiKeyName|[API KEY NAME]|Will be passed in the header  :  the file name of the config.
 |AppName| [APPLICATION NAME]| This is the name of the Function App, used in log analytics|
 |StorageAcctName|[STORAGE ACCOUNT NAME]|Example  "AzureWebJobsStorage"|
-|EncryptionKey|Generate Encryption Key | Generate a encryption key. Store in Azure Key Vault |
+|EncryptionToken|Generate Encryption Key | Generate a encryption key. Store in Azure Key Vault |
 
 
 > **Note:**  Look at the configuration file in the **Config** Folder and created a Table to record information.
